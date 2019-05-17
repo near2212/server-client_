@@ -9,28 +9,28 @@
 class Server : public Base
 {
 public:
-	const std::string REQUEST_SORT = "sort1 "; //объявляем ключ1
-	const std::string REQUEST_SEND = "send"; //объявляем ключ 2
+	const std::string REQUEST_SORT = "sort1 ";  //РѕР±СЉСЏРІР»СЏРµРј РєР»СЋС‡1
+	const std::string REQUEST_SEND = "send";//РѕР±СЉСЏРІР»СЏРµРј РєР»СЋС‡ 2
 
-	Server();//конструктор
+	Server();//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	Server(int port);
-	~Server();//деструктор 
+	~Server();//РґРµСЃС‚СЂСѓРєС‚РѕСЂ 
 	int init();
-	int handle();//переопределенный метод
-	typedef void (Server::* CallbackFunc)(void);//определение типа указателя на функцию, которая ничего не возвращает и не принимает
+	int handle();//РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ РјРµС‚РѕРґ
+	typedef void (Server::* CallbackFunc)(void);//РѕРїСЂРµРґРµР»РµРЅРёРµ С‚РёРїР° СѓРєР°Р·Р°С‚РµР»СЏ РЅР° С„СѓРЅРєС†РёСЋ, РєРѕС‚РѕСЂР°СЏ РЅРёС‡РµРіРѕ РЅРµ РІРѕР·РІСЂР°С‰Р°РµС‚ Рё РЅРµ РїСЂРёРЅРёРјР°РµС‚
 	DWORD WINAPI ToClient(LPVOID client_socket);
-	void sort();//сортировка
-	void send_name();//заполнения вектора имен
+	void sort();//СЃРѕСЂС‚РёСЂРѕРІРєР°
+	void send_name();//Р·Р°РїРѕР»РЅРµРЅРёСЏ РІРµРєС‚РѕСЂР° РёРјРµРЅ
 	//std::string save_name;
-	void rec_sort(std::vector<std::string> a, int b);//сортировка рекурсией. в коде не применяется, но можно если хочется
+	void rec_sort(std::vector<std::string> a, int b);//СЃРѕСЂС‚РёСЂРѕРІРєР° СЂРµРєСѓСЂСЃРёРµР№. РІ РєРѕРґРµ РЅРµ РїСЂРёРјРµРЅСЏРµС‚СЃСЏ, РЅРѕ РјРѕР¶РЅРѕ РµСЃР»Рё С…РѕС‡РµС‚СЃСЏ
+
 
 private:
 
 	std::string* buff_s;
-	std::vector<std::string> message;//вектор имен
-	std::map<std::string, CallbackFunc> fn_map;//словарь команд,и указателей на функции типа Callback 
-
-	char buff[1024];//буфер char
-	SOCKET mysocket;// сокет
+	std::vector<std::string> message;//РІРµРєС‚РѕСЂ РёРјРµРЅ
+	std::map<std::string, CallbackFunc> fn_map;//СЃР»РѕРІР°СЂСЊ РєРѕРјР°РЅРґ,Рё СѓРєР°Р·Р°С‚РµР»РµР№ РЅР° С„СѓРЅРєС†РёРё С‚РёРїР° Callback
+	char buff[1024];//Р±СѓС„РµСЂ char
+	SOCKET mysocket;// СЃРѕРєРµС‚
 };
 
