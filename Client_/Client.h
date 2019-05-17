@@ -3,19 +3,19 @@
 
 //#include "../Base/Header.h"
 #include "Header.h"
-class Client : public Base//наследование от абстрактного класса
+class Client : public Base//РЅР°СЃР»РµРґРѕРІР°РЅРёРµ РѕС‚ Р°Р±СЃС‚СЂР°РєС‚РЅРѕРіРѕ РєР»Р°СЃСЃР°
 {
 public:
-	Client();//конструктор
-	Client(int _port, const std::string& _serverAddr);//конструктор
+	Client();//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	Client(int _port, const std::string& _serverAddr);//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	int init();
 	int handle();
-	void SetServerAddr(const std::string& _serverAddr) { serverAddr = _serverAddr; }//сеттер, создание строки при помощи спецификатора Const
-	std::string GetServerAddr() const { return serverAddr; }//геттер
+	void SetServerAddr(const std::string& _serverAddr) { serverAddr = _serverAddr; }//СЃРµС‚С‚РµСЂ, СЃРѕР·РґР°РЅРёРµ СЃС‚СЂРѕРєРё РїСЂРё РїРѕРјРѕС‰Рё СЃРїРµС†РёС„РёРєР°С‚РѕСЂР° Const
+	std::string GetServerAddr() const { return serverAddr; }//РіРµС‚С‚РµСЂ
 
 private:
-	char buff[1024];//буфер для разных нужд
-	SOCKET my_sock;//сокет
+	char buff[1024];//Р±СѓС„РµСЂ РґР»СЏ СЂР°Р·РЅС‹С… РЅСѓР¶Рґ
+	SOCKET my_sock;//СЃРѕРєРµС‚
 
 	std::string serverAddr;
 };
