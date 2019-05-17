@@ -3,7 +3,7 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
 #include <stdio.h>
-#include <winsock2.h> // Wincosk2.h должен быть раньше windows!
+#include <winsock2.h> //Wincosk2.h РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СЂР°РЅСЊС€Рµ windows!
 #include <windows.h>
 
 #pragma comment(lib,"ws2_32.lib")
@@ -11,11 +11,12 @@
 class Base
 {
 public:
-	Base() : Base(666) {}//конструктор вызывает конструктор
-	Base(int _port) : port(_port) {}//конструктор 
-	virtual int handle() = 0;//чисто виртуальный метод
-	int GetPort() const { return port; }//геттер
-	void SetPort(int _port) { port = _port; }//сеттер
+	Base() : Base(666) {}//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РІС‹Р·С‹РІР°РµС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	Base(int _port) : port(_port) {}//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	virtual ~Base() {};//РІРёСЂС‚СѓР°Р»СЊРЅС‹Р№ РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+	virtual int handle() = 0;//С‡РёСЃС‚Рѕ РІРёСЂС‚СѓР°Р»СЊРЅС‹Р№ РјРµС‚РѕРґ
+	int GetPort() const { return port; }//РіРµС‚С‚РµСЂ
+	void SetPort(int _port) { port = _port; }//СЃРµС‚С‚РµСЂ
 
 protected:
 	int port;
