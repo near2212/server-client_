@@ -8,6 +8,7 @@
 
 //fgjfgbzjfgjf
 //ahgadhasgd
+//hsgehe
 Client::Client() : serverAddr("127.0.0.1")//описание конструктора
 {
 
