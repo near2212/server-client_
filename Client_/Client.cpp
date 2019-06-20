@@ -6,7 +6,8 @@
 #include <string>
 #include "Client.h"
 
-
+//fgjfgbzjfgjf
+//ahgadhasgd
 Client::Client() : serverAddr("127.0.0.1")//описание конструктора
 {
 
